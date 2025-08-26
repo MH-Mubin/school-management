@@ -93,10 +93,13 @@ docker run --name postgres-school \
    ```bash
    # Generate and run migrations
    npm run db:generate
-   npm run db:migrate
+   npm run db:push
    
    # Seed the database with sample data
    npm run db:seed
+   
+   # Or run setup (push + seed) in one command
+   npm run db:setup
    ```
 
 5. **Start the development server**
@@ -191,8 +194,10 @@ If you get `password authentication failed` error:
 - `npm run build` - Build for production
 - `npm start` - Start production server
 - `npm run db:generate` - Generate database migrations
-- `npm run db:migrate` - Run database migrations
+- `npm run db:push` - Push schema changes to database
+- `npm run db:migrate` - Push schema changes to database (alias for db:push)
 - `npm run db:seed` - Seed database with sample data
+- `npm run db:setup` - Run db:push and db:seed in sequence
 - `npm test` - Run tests
 - `npm run lint` - Run ESLint
 - `npm run lint:fix` - Fix ESLint issues

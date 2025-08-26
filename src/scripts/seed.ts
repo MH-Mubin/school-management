@@ -35,7 +35,7 @@ async function seed() {
       },
     ]).returning();
 
-    console.log('✅ Users created:', seedUsers.length);
+    console.log('Users created:', seedUsers.length);
 
     // Create classes
     const seedClasses = await db.insert(classes).values([
@@ -53,7 +53,7 @@ async function seed() {
       },
     ]).returning();
 
-    console.log('✅ Classes created:', seedClasses.length);
+    console.log('Classes created:', seedClasses.length);
 
     // Create students
     const seedStudents = await db.insert(students).values([
@@ -84,28 +84,28 @@ async function seed() {
       },
     ]).returning();
 
-    console.log('✅ Students created:', seedStudents.length);
+    console.log('Students created:', seedStudents.length);
 
-    console.log('🎉 Database seeding completed successfully!');
-    console.log('\n📋 Summary:');
+    console.log('Database seeding completed successfully!');
+    console.log('\n Summary:');
     console.log(`- Users: ${seedUsers.length}`);
     console.log(`- Classes: ${seedClasses.length}`);
     console.log(`- Students: ${seedStudents.length}`);
-    console.log('\n🔐 Login credentials:');
+    console.log('\n Login credentials:');
     console.log('Admin: admin@school.com / password123');
     console.log('Teacher: teacher@school.com / password123');
     console.log('Student: student@school.com / password123');
 
   } catch (error) {
-    console.error('❌ Database seeding failed:', error);
+    console.error('Database seeding failed:', error);
     process.exit(1);
   }
 }
 
 seed().then(() => {
-  console.log('✅ Seeding process completed');
+  console.log('Seeding process completed');
   process.exit(0);
 }).catch((error) => {
-  console.error('❌ Seeding process failed:', error);
+  console.error('Seeding process failed:', error);
   process.exit(1);
 });
