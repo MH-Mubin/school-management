@@ -52,6 +52,14 @@ async function seed() {
         name: 'English',
         section: 'A',
       },
+      {
+        name: 'History',
+        section: 'C',
+      },
+      {
+        name: 'Computer Science',
+        section: 'D',
+      },
     ]).returning();
 
     console.log('Classes created:', seedClasses.length);
@@ -80,6 +88,81 @@ async function seed() {
       },
       {
         name: 'Edward Norton',
+        age: 17,
+        classId: seedClasses[1].id,
+      },
+      {
+        name: 'Fiona Green',
+        age: 16,
+        classId: seedClasses[3].id,
+      },
+      {
+        name: 'George Miller',
+        age: 15,
+        classId: seedClasses[4].id,
+      },
+      {
+        name: 'Hannah White',
+        age: 18,
+        classId: seedClasses[0].id,
+      },
+      {
+        name: 'Ian Black',
+        age: 17,
+        classId: seedClasses[2].id,
+      },
+      {
+        name: 'Julia Roberts',
+        age: 16,
+        classId: seedClasses[1].id,
+      },
+      {
+        name: 'Kevin Hart',
+        age: 15,
+        classId: seedClasses[3].id,
+      },
+      {
+        name: 'Lisa Chen',
+        age: 17,
+        classId: seedClasses[4].id,
+      },
+      {
+        name: 'Michael Jordan',
+        age: 16,
+        classId: seedClasses[0].id,
+      },
+      {
+        name: 'Nina Patel',
+        age: 18,
+        classId: seedClasses[2].id,
+      },
+      {
+        name: 'Oscar Martinez',
+        age: 15,
+        classId: seedClasses[1].id,
+      },
+      {
+        name: 'Paula Anderson',
+        age: 17,
+        classId: seedClasses[3].id,
+      },
+      {
+        name: 'Quinn Taylor',
+        age: 16,
+        classId: seedClasses[4].id,
+      },
+      {
+        name: 'Rachel Green',
+        age: 18,
+        classId: seedClasses[0].id,
+      },
+      {
+        name: 'Samuel Lee',
+        age: 15,
+        classId: seedClasses[2].id,
+      },
+      {
+        name: 'Tina Brown',
         age: 17,
         classId: seedClasses[1].id,
       },
