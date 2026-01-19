@@ -1,3 +1,4 @@
+require('dotenv').config();
 const bcrypt = require('bcryptjs');
 const { db } = require('../db');
 const { users, classes, students } = require('../db/schema');

@@ -1,4 +1,4 @@
-import { pgTable, serial, varchar, integer, timestamp, pgEnum } from 'drizzle-orm/pg-core';
+import { pgTable, serial, varchar, integer, timestamp, pgEnum, index } from 'drizzle-orm/pg-core';
 import { relations } from 'drizzle-orm';
 
 // Enums
@@ -13,7 +13,9 @@ export const users = pgTable('users', {
   role: userRoleEnum('role').notNull(),
   createdAt: timestamp('created_at').defaultNow().notNull(),
   updatedAt: timestamp('updated_at').defaultNow().notNull(),
-});
+}, (table) => ({
+  emailIdx: index('users_email_idx').on(table.email),
+}));
 
 // Classes table
 export const classes = pgTable('classes', {
@@ -32,7 +34,9 @@ export const students = pgTable('students', {
   classId: integer('class_id').references(() => classes.id),
   createdAt: timestamp('created_at').defaultNow().notNull(),
   updatedAt: timestamp('updated_at').defaultNow().notNull(),
-});
+}, (table) => ({
+  classIdIdx: index('students_class_id_idx').on(table.classId),
+}));
 
 // Relations
 export const usersRelations = relations(users, ({ many }) => ({

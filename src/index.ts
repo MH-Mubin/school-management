@@ -1,4 +1,7 @@
-// Add this to src/index.ts (save current changes first)
+// Load environment variables first
+import dotenv from 'dotenv';
+dotenv.config();
+
 import app from './app';
 import { sql } from './db';
 

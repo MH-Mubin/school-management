@@ -52,3 +52,10 @@ Thumbs.db
 
 # Docker
 .dockerignore
+
+# Documentation (exclude from Git except README.md)
+DATABASE-SETUP.md
+DOCKER-README.md
+
+# Test files (temporary/debugging)
+init-db.sh
